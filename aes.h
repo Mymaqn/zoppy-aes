@@ -1,6 +1,6 @@
 /*
 This file is part of zoppy-aes.
-aes.c is the general code and implementation of the AES algorithm for the zoppy-aes library
+aes.h is the header file for the implementation of the AES algorithm for the zoppy-aes library
 
 Copyright (C) 2023 Jens Nielsen
 
