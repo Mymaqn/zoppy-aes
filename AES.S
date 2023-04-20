@@ -1,6 +1,6 @@
 .intel_syntax noprefix
 .text
-    .globl AES_gen_roundkey, AES_encrypt_block, AES_inverse_roundkey, AES_decrypt_block
+    .globl AES_gen_roundkey, AES_encrypt_block, AES_inverse_roundkey, AES_decrypt_block, AES128_memcpy, AES128_xor
 
     AES_gen_roundkey:
         #Key in RDI and output buffer in RSI
@@ -139,7 +139,7 @@
         pxor xmm1, xmm2
         movups [rsi+160], xmm1
 
-        mov rsi, rax
+        mov rax, rsi
         ret
 
     AES_inverse_roundkey:
@@ -251,6 +251,19 @@
     
         movups [rdi], xmm0
         mov rax, rdi
+        ret
+
+    AES128_memcpy:
+        # s1 in rdi and s2 in rsi
+        movups xmm0, [rsi]
+        movups [rdi], xmm0
+        ret
+    AES128_xor:
+        # s1 in rdi and s2 in rsi
+        movups xmm0, [rdi]
+        movups xmm1, [rsi]
+        pxor xmm0, xmm1
+        movups [rdi],xmm0
         ret
 
 
