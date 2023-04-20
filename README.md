@@ -46,6 +46,13 @@ However since this is a hardware specific implementation, it's an unfair compari
 
 100 million iterations of AES128 CBC encryption and decryption on a 32-byte buffer with -O3 flag, takes around 6 seconds.
 
+## Compilation
+
+Example of doing a compilation for maximum performance:
+
+```
+gcc -O3 program.c AES.S aes.c aes.h -masm=intel -s -o example
+```
 
 ## QA
 
