@@ -1,3 +1,16 @@
+/*
+This file is part of zoppy-aes.
+AES.S is the implementation of AES in the zoppy-aes library
+
+Copyright (C) 2023 Jens Nielsen
+
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with this program. If not, see https://www.gnu.org/licenses/. 
+*/
+
 .intel_syntax noprefix
 .text
     .globl AES_gen_roundkey, AES_encrypt_block, AES_inverse_roundkey, AES_decrypt_block, AES128_memcpy, AES128_xor
